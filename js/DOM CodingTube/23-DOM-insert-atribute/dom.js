@@ -19,7 +19,7 @@ for (let i = 0 ; i < 10 ; i++) {
         parrafo.append( parrafoTexto );
     }else{
         let parrafoTexto = document.createTextNode( `Párrafo ${i}` );
-        parrafo.append( parrafoTexto );
+        parrafo.append( parrafoTexto )
     }
     sectionReference.appendChild( parrafo );
 }
@@ -27,6 +27,7 @@ for (let i = 0 ; i < 10 ; i++) {
 //Prueba insertBefore
 let parrafo0 = document.getElementById( "parrafo0" );
 let parrafo2 = document.getElementById( "parrafo2" );;
+//*parrafo2.classList.add('superParrafo')                 //*PROBANDO; si se agrego como segunda clase.
 sectionReference.insertBefore( parrafo0, parrafo2 );
 
 for (let i = 0; i <5 ; i++) {
@@ -36,3 +37,11 @@ for (let i = 0; i <5 ; i++) {
     ( i === 2 ) ? sectionReference.insertAdjacentElement( "beforeend", parrafo ):
     sectionReference.insertAdjacentElement("afterend", parrafo);
 }
+
+let superParrafos = document.querySelectorAll('p')
+superParrafos = [...superParrafos]
+superParrafos.forEach(p => p.classList.add('superParrafo'))    //! ERROR; no se agrega como segunda clase
+
+//TODO falta corregir el error de consola
+//TODO falta corregir codigo para saber porque no se agregan las clases
+
