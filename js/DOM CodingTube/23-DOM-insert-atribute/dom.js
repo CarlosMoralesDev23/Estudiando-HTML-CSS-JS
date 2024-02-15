@@ -14,20 +14,13 @@ for (let i = 0 ; i < 10 ; i++) {
     let parrafo = document.createElement( "p" );
     parrafo.id  = `parrafo${i}`;
     parrafo.classList.add( "parrafos" );
-    if( i >=6 ){
-        let parrafoTexto = parrafos[ i-6 ];
-        parrafo.append( parrafoTexto );
-    }else{
-        let parrafoTexto = document.createTextNode( `Párrafo ${i}` );
-        parrafo.append( parrafoTexto )
-    }
-    sectionReference.appendChild( parrafo );
+    let parrafoTexto = ( i >=6 ) ? parrafos[ i-6 ] : `Párrafo ${i}`;
+    sectionReference.appendChild( parrafo ).append( parrafoTexto );
 }
 
 //Prueba insertBefore
 let parrafo0 = document.getElementById( "parrafo0" );
 let parrafo2 = document.getElementById( "parrafo2" );;
-//*parrafo2.classList.add('superParrafo')                 //*PROBANDO; si se agrego como segunda clase.
 sectionReference.insertBefore( parrafo0, parrafo2 );
 
 //Agregar segunda clase
