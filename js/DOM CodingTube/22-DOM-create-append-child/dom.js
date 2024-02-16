@@ -18,8 +18,6 @@ for (let i = 1; i < 6; i++) {
     let textoParrafo = document.createTextNode(`Párrafo ${i}`);
     parrafo.appendChild(textoParrafo);
     sectionReference.appendChild(parrafo);
-
-
 }
 
 //Seleccionar raiz de nodo

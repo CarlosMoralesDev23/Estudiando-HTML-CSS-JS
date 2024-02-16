@@ -1,0 +1,32 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    margin: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+p{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px;
+    color: rgb(40, 1, 1);
+}
+
+button{
+    width: 250px;
+    height: 70px;
+    background-color: black;
+    color: white;
+    margin-top: 40px;
+}
+
+
+
+

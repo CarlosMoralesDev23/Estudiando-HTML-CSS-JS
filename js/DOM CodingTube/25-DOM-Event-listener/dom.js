@@ -50,3 +50,6 @@ for (let i = 1; i < arrayBotones.length; i++) {
         }
     });
 }
+
+
+//TODO corregir la asignaciones de listeners en los botones. 
