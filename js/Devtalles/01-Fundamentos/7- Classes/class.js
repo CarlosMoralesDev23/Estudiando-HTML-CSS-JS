@@ -1,5 +1,14 @@
 class Persona {
 
+    static _conteo = 0;
+    static get getConteo(){
+        return Persona._conteo + ' Instancias'
+    }
+    static mensaje(){
+        console.log(this.nombre);
+        console.log("Hola a todos soy un metodo Static")
+    }
+
     nombre = '';
     codigo = '';
     frase  = '';
@@ -9,22 +18,50 @@ class Persona {
         this.nombre = nombre;
         this.codigo = codigo;
         this.frase  = frase;
+
+        Persona._conteo++; 
     }
 
-    setComidaFavorita(comida){
-        this.comida = comida;
+    set setComidaFavorita(comida){
+        this.comida = comida.toUpperCase();
+    }
+
+    get getComidaFavorita(){
+        return this.comida
     }
 
     quienSoy(){
-        console.log(`Mi nombre es ${this.nombre} y mi el nombre de mi personaje es ${this.codigo}`)
+        console.log(`Soy ${this.nombre} y mi personaje es ${this.codigo}`);
     }
 
-    fraseFavorita(){
-        console.log(this.quienSoy)
-        console.log(`Mi frase favorita es ${this.frase} y me encanta comer ${this.comida}`)
+    miFrase(){
+        this.quienSoy();
+        console.log(`${this.codigo} dice: ${this.frase}`);
     }
 }
 
-const spiderman = new Persona('Peter', 'Spiderman', 'El increible hombre araña', 'Hamburguer');
+let spiderman = new Persona('Peter', 'Spiderman', 'El increible hombre araña');
+let ironman = new Persona('Tony Stark', 'Ironman', 'Yo soy Ironman');
 
+spiderman.miFrase();
+spiderman.setComidaFavorita = 'HotDogs'
 console.log(spiderman)
+console.log(spiderman.getComidaFavorita);
+
+console.log(`Cuantas instancias se han creado:`, Persona._conteo)
+
+console.log(Persona.getConteo)
+Persona.mensaje()
+
+
+// JS  permite crear propiedades a la clase como si fuese un objeto literal
+//!  No se recomienda porque no es un codigo limpio. 
+
+Persona.nuevaPropiedadExterna = "Soy la propiedad Externa"
+console.log( Persona.nuevaPropiedadExterna )
+console.log( Persona )
+
+//--------------------------------------------------------------
+
+
+
