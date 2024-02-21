@@ -51,6 +51,7 @@ console.log(spiderman.getComidaFavorita);
 console.log(`Cuantas instancias se han creado:`, Persona._conteo)
 
 console.log(Persona.getConteo)
+console.log(Persona._conteo);
 Persona.mensaje()
 
 
@@ -60,8 +61,9 @@ Persona.mensaje()
 Persona.nuevaPropiedadExterna = "Soy la propiedad Externa"
 console.log( Persona.nuevaPropiedadExterna )
 console.log( Persona )
-
 //--------------------------------------------------------------
+
+
 
 
 
