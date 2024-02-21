@@ -45,12 +45,17 @@ class Heroe extends Persona{
 
     constructor(nombre, codigo, frase, clan){
         super(nombre, codigo, frase)
-        this.clan = clan
+        this.clan = "Avengers"
+    }
+
+    quienSoy(){
+        console.log(`Soy ${this.nombre} del clan ${this.clan}`)
+        super.quienSoy()
     }
 }
 
 
 // let spiderman = new Persona("Peter", "Spiderman", "El increible hombre araña");
 let spiderman = new Heroe("Peter", "Spiderman", "El increible hombre araña");
-
+spiderman.quienSoy()
 console.log(spiderman)
